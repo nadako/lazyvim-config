@@ -9,4 +9,4 @@ vim.api.nvim_create_user_command("OverseerRestartLast", function()
     overseer.run_action(tasks[1], "restart")
   end
 end, {})
-vim.keymap.set("n", "<leader>ol", "<cmd>OverseerRestartLast<CR>", { desc = "Restart Last Task" })
+vim.keymap.set("n", "<leader>ol", "<cmd>wall | OverseerRestartLast<CR>", { desc = "Restart Last Task" })

@@ -6,7 +6,8 @@ vim.api.nvim_create_user_command("OverseerRestartLast", function()
   if vim.tbl_isempty(tasks) then
     vim.notify("No tasks found", vim.log.levels.WARN)
   else
-    overseer.run_action(tasks[1], "restart")
+    local last_task = tasks[1]
+    last_task:restart()
   end
 end, {})
 vim.keymap.set("n", "<leader>ol", "<cmd>wall | OverseerRestartLast<CR>", { desc = "Restart Last Task" })
